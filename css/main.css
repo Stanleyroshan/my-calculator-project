@@ -1,0 +1,140 @@
+body {
+    background-color: #000; 
+    color: pink; 
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(-45deg, #ff7300, #fddb00, #00eaff, #dfff00);
+    background-size: 400% 400%;
+    animation: gradientAnimation 10s ease infinite;
+}
+
+@keyframes gradientAnimation {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+.calculator {
+    max-width: 300px;
+    margin: 50px auto;
+    text-align: center;
+    background-color: pink;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+input[type="text"] {
+    width: 90%;
+    padding: 10px;
+    margin-bottom: 15px;
+    font-size: 24px;
+    text-align: right;
+    border: 10px solid palevioletred;
+    border-radius: 15px;
+}
+
+.buttons {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+}
+
+button {
+    padding: 20px;
+    font-size: 20px;
+    cursor: pointer;
+    border: none;
+    background-color: #fff;
+    color: #333;
+    width: 100%;
+    border-radius: 20px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s ease;
+}
+.buttons > button:nth-child(4n + 1) {
+    background-color: #ffcc00; 
+}
+.buttons > button:nth-child(4n + 2) {
+    background-color: #ff9999; 
+}
+.buttons > button:nth-child(4n + 3) {
+    background-color: #99ccff; 
+}
+.buttons > button:nth-child(4n + 4) {
+    background-color: #99ff99; 
+}
+
+button.clear {
+    grid-column: span 2;
+    background-color: #ff6600; 
+}
+
+button.delete {
+    background-color: #ff6600; 
+}
+
+button.equal {
+    background-color: #007bff;
+    color: #fff;
+}
+
+button.equal:hover {
+    background-color: green;
+}
+
+button.history {
+    grid-column: span 4;
+    background-color: #6c757d;
+    color: #fff;
+}
+
+button.history:hover {
+    background-color: #5a6268;
+}
+
+#history-container {
+    text-align: left;
+    margin-top: 20px;
+    background-color: rgba(255, 255, 255, 0.9); 
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    max-width: 300px;
+    margin: 20px auto; 
+    overflow-y: auto;
+    max-height: 200px; 
+    animation: fadeIn 1s ease-in-out;
+}
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+#history-container h3 {
+    margin-top: 0;
+    color: #333;
+}
+
+#history-container p {
+    margin: 5px 0;
+    padding: 5px;
+    border-bottom: 1px solid #ccc;
+    color: #333;
+}
+
+#history-container p:last-child {
+    border-bottom: none;
+}
